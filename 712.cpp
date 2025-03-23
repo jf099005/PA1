@@ -22,7 +22,7 @@ int median_of_medians(int* arr, int arr_len){
         return median_of_small_group(arr, arr_len);
     }
     int reduce_len = arr_len/5 + (arr_len%5 != 0);
-    int *reduced_arr = (int*)malloc(arr_len*sizeof(int));
+    int *reduced_arr = new int[reduce_len];
     int r=0;
     for(int i=0;i<arr_len;i+=5){
         int m = median_of_small_group(arr+i, min(5, arr_len - i));
@@ -65,7 +65,7 @@ int main(){
     int T;cin>>T;
     while(T--){
         int n,k;cin>>n>>k;
-        int *arr = (int*)malloc(n*sizeof(int));
+        int *arr = new int[n];
         for(int i=0;i<n;i++)cin>>arr[i];
         cout << get_kth_by_dc(arr, 0, n, n-k+1) << endl <<endl;
         delete [] arr;
