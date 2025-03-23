@@ -1,7 +1,6 @@
 #include<iostream>
 #include<vector>
 #include<queue>
-#define int long long
 using namespace std;
 long long E= 1e9, MOD = 1e10+69;
 
